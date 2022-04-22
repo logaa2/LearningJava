@@ -1,4 +1,6 @@
 import java.util.List;
+import java.util.Scanner;
+
 /*b) Bank Management System:
         * Create a Bank Management System which has the following components:
         * Person (which saves first, middle and last name, age and a "social security number")
@@ -14,5 +16,8 @@ public class main{
         System.out.println("Are you a? ");
         System.out.println("1 ) Bank Member");
         System.out.println("2 ) New Customer");
-    }   
+        System.out.println("please enter the corresponding number: ");
+        Scanner scanner = new Scanner(System.in);
+        int memberType = scanner.nextInt();
+    }
 }
