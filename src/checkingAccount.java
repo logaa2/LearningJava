@@ -5,16 +5,19 @@ public class checkingAccount{
     {
         this.balance = balance;
     }
-    public float withdrawal() {
+    public static float withdrawal() {
         System.out.print("Withdrawal amount: ");
         Scanner scanner = new Scanner(System.in);
         float input = scanner.nextFloat();
+        if(input > 1500){
+            System.out.print("The max withdrawal amount is: " + Bank.maximumOverdrawAmount);
+            return 0;
+        }
         return input;
     }
-    public float deposit() {
+    public static float deposit() {
         System.out.print("Deposit amount: ");
         Scanner scanner2 = new Scanner(System.in);
-        float input = scanner2.nextFloat();
-        return input;
+        return scanner2.nextFloat();
     }
 }

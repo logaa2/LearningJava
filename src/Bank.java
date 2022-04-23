@@ -19,7 +19,7 @@ public class Bank{
     {
         bankMembers.add(member);
         bankAccounts.add(newBankAccount);
-        System.out.println(bankAccounts.size());
+        Bank.checkingAccounts.add(Bank.newCheckingAccount);
     }
     public static boolean loginSucceeded(String username){
         for(int i =0; i < bankMembers.size(); i++){
@@ -40,7 +40,6 @@ public class Bank{
     public static int findUserID(String userName){
         for(int i =0; i < bankMembers.size(); i++){
             if(bankMembers.get(i).firstName.equals(userName)){
-                System.out.println(i);
                 return i;
             }
         }
