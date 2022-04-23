@@ -1,7 +1,15 @@
 public class person {
-    protected String firstName;
-    protected String middleName;
-    protected String lastName;
-    protected int age;
-    protected String socialSecurityNumber;
+    public String firstName;
+    public String middleName;
+    public String lastName;
+    public int age;
+    public String socialSecurityNumber;
+    public person(String firstName,String middleName,String lastName,int age,String socialSecurityNumber)
+    {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.age = age;
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
 }
