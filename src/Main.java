@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,9 +11,11 @@ import java.util.Scanner;
  *
  * BONUS: Make the Banking System Interactive (No Solution provided!)*/
 public class Main {
-
+    public List<person> bankMembers = new ArrayList<>();
     public static void main(String[] args) {
+        person newMember;
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Welcome to Leo Banking :)");
         System.out.println("Are you a? ");
         System.out.println("1 ) Bank Member");
@@ -33,7 +36,8 @@ public class Main {
             String yesNo = scanner2.nextLine();
 
             if(yesNo.equals("Yes")){
-                registerForm.newRegisterForm();
+                newMember = registerForm.newRegisterForm();
+                Bank.addToBankMembersList(newMember);
             }else if(yesNo.equals("No")){
                 System.out.println("ok :)");
             }
