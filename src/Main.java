@@ -15,6 +15,10 @@ public class Main {
         person newMember;
         Scanner scanner = new Scanner(System.in);
 
+        person Aris = new person("Aris", "Cuellar", "Fuentes", 24, "232-32-1414");
+        Bank.createNewBankMember(Aris);
+
+
         System.out.println("Welcome to Leo Banking :)");
         System.out.println("Are you a? ");
         System.out.println("1 ) Bank Member");
@@ -25,8 +29,9 @@ public class Main {
 
         if(memberType == 1)
         {
+            Scanner loginScanner = new Scanner(System.in);
             System.out.println("Please sign in with your name: ");
-            String memberName = scanner.nextLine();
+            String memberName = loginScanner.nextLine();
             if(Bank.loginSucceeded(memberName) == true ){
                 loggedIN.homepage(Bank.findUser(memberName));
             }
@@ -40,7 +45,7 @@ public class Main {
 
             if(yesNo.equals("Yes")){
                 newMember = registerForm.newRegisterForm();
-                Bank.addToBankMembersList(newMember);
+                Bank.createNewBankMember(newMember);
                 loggedIN.homepage(newMember);
             }else if(yesNo.equals("No")){
                 System.out.println("ok :) see you next time");
