@@ -11,7 +11,6 @@ import java.util.Scanner;
  *
  * BONUS: Make the Banking System Interactive (No Solution provided!)*/
 public class Main {
-    public List<person> bankMembers = new ArrayList<>();
     public static void main(String[] args) {
         person newMember;
         Scanner scanner = new Scanner(System.in);
@@ -28,7 +27,11 @@ public class Main {
         {
             System.out.println("Please sign in with your name: ");
             String memberName = scanner.nextLine();
+            if(Bank.loginSucceeded(memberName) == true ){
+                loggedIN.homepage(Bank.findUser(memberName));
+            }
         }
+
         else if (memberType == 2)
         {
             System.out.println("Would you like to register? Yes/No");
@@ -38,9 +41,11 @@ public class Main {
             if(yesNo.equals("Yes")){
                 newMember = registerForm.newRegisterForm();
                 Bank.addToBankMembersList(newMember);
+                loggedIN.homepage(newMember);
             }else if(yesNo.equals("No")){
-                System.out.println("ok :)");
+                System.out.println("ok :) see you next time");
             }
         }
+
     }
 }
